@@ -14,8 +14,231 @@
     },
     "id" : "1",
     "uri" : "pipelines/basics",
+    "sourceSuggestions" : [ {
+      "sourceLabel" : "car_sales",
+      "sourceDatasetId" : "datasets/car-sales",
+      "canJoinWith" : [ {
+        "processLabel" : "car-sales-us-no-ca_1",
+        "processId" : "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI",
+        "joinColumns" : [ "body", "color", "condition" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "body", "color", "condition" ],
+          "conditions" : [ {
+            "alias" : "car_sales",
+            "expression" : "((('car-sales-us-no-ca_1'['body'] = car_sales.body) AND ('car-sales-us-no-ca_1'['color'] = car_sales.color)) AND ('car-sales-us-no-ca_1'['condition'] = car_sales.condition))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "state",
+            "expression" : "'car-sales-us-no-ca_1'['state']"
+          }, {
+            "alias" : "trim",
+            "expression" : "'car-sales-us-no-ca_1'['trim']"
+          }, {
+            "alias" : "interior",
+            "expression" : "'car-sales-us-no-ca_1'['interior']"
+          }, {
+            "alias" : "model",
+            "expression" : "'car-sales-us-no-ca_1'['model']"
+          }, {
+            "alias" : "make",
+            "expression" : "'car-sales-us-no-ca_1'['make']"
+          }, {
+            "alias" : "odometer",
+            "expression" : "'car-sales-us-no-ca_1'['odometer']"
+          }, {
+            "alias" : "seller",
+            "expression" : "'car-sales-us-no-ca_1'['seller']"
+          }, {
+            "alias" : "transmission",
+            "expression" : "'car-sales-us-no-ca_1'['transmission']"
+          }, {
+            "alias" : "body",
+            "expression" : "'car-sales-us-no-ca_1'['body']"
+          }, {
+            "alias" : "condition",
+            "expression" : "'car-sales-us-no-ca_1'['condition']"
+          }, {
+            "alias" : "sellingprice",
+            "expression" : "'car-sales-us-no-ca_1'['sellingprice']"
+          }, {
+            "alias" : "mmr",
+            "expression" : "'car-sales-us-no-ca_1'['mmr']"
+          }, {
+            "alias" : "color",
+            "expression" : "'car-sales-us-no-ca_1'['color']"
+          }, {
+            "alias" : "saledate",
+            "expression" : "'car-sales-us-no-ca_1'['saledate']"
+          }, {
+            "alias" : "year",
+            "expression" : "'car-sales-us-no-ca_1'['year']"
+          }, {
+            "alias" : "vin",
+            "expression" : "'car-sales-us-no-ca_1'['vin']"
+          } ],
+          "headAlias" : "datasets/car-sales"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "car_title_status",
+      "sourceDatasetId" : "datasets/car-title-status",
+      "canJoinWith" : [ {
+        "processLabel" : "car-sales-us-no-ca_1",
+        "processId" : "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI",
+        "joinColumns" : [ "color", "condition", "model" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "color", "condition", "model" ],
+          "conditions" : [ {
+            "alias" : "car_title_status",
+            "expression" : "((('car-sales-us-no-ca_1'['color'] = car_title_status.color) AND ('car-sales-us-no-ca_1'['condition'] = car_title_status.condition)) AND ('car-sales-us-no-ca_1'['model'] = car_title_status.model))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "_c0",
+            "expression" : "car_title_status._c0"
+          }, {
+            "alias" : "price",
+            "expression" : "car_title_status.price"
+          }, {
+            "alias" : "brand",
+            "expression" : "car_title_status.brand"
+          }, {
+            "alias" : "title_status",
+            "expression" : "car_title_status.title_status"
+          }, {
+            "alias" : "mileage",
+            "expression" : "car_title_status.mileage"
+          }, {
+            "alias" : "lot",
+            "expression" : "car_title_status.lot"
+          }, {
+            "alias" : "country",
+            "expression" : "car_title_status.country"
+          }, {
+            "alias" : "state",
+            "expression" : "'car-sales-us-no-ca_1'['state']"
+          }, {
+            "alias" : "trim",
+            "expression" : "'car-sales-us-no-ca_1'['trim']"
+          }, {
+            "alias" : "interior",
+            "expression" : "'car-sales-us-no-ca_1'['interior']"
+          }, {
+            "alias" : "model",
+            "expression" : "'car-sales-us-no-ca_1'['model']"
+          }, {
+            "alias" : "make",
+            "expression" : "'car-sales-us-no-ca_1'['make']"
+          }, {
+            "alias" : "odometer",
+            "expression" : "'car-sales-us-no-ca_1'['odometer']"
+          }, {
+            "alias" : "seller",
+            "expression" : "'car-sales-us-no-ca_1'['seller']"
+          }, {
+            "alias" : "transmission",
+            "expression" : "'car-sales-us-no-ca_1'['transmission']"
+          }, {
+            "alias" : "body",
+            "expression" : "'car-sales-us-no-ca_1'['body']"
+          }, {
+            "alias" : "condition",
+            "expression" : "'car-sales-us-no-ca_1'['condition']"
+          }, {
+            "alias" : "sellingprice",
+            "expression" : "'car-sales-us-no-ca_1'['sellingprice']"
+          }, {
+            "alias" : "mmr",
+            "expression" : "'car-sales-us-no-ca_1'['mmr']"
+          }, {
+            "alias" : "color",
+            "expression" : "'car-sales-us-no-ca_1'['color']"
+          }, {
+            "alias" : "saledate",
+            "expression" : "'car-sales-us-no-ca_1'['saledate']"
+          }, {
+            "alias" : "year",
+            "expression" : "'car-sales-us-no-ca_1'['year']"
+          }, {
+            "alias" : "vin",
+            "expression" : "'car-sales-us-no-ca_1'['vin']"
+          } ],
+          "headAlias" : "datasets/car-title-status"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "car_sales_ca",
+      "sourceDatasetId" : "datasets/car-sales-ca",
+      "canJoinWith" : [ {
+        "processLabel" : "car-sales-us-no-ca_1",
+        "processId" : "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI",
+        "joinColumns" : [ "body", "color", "condition" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "body", "color", "condition" ],
+          "conditions" : [ {
+            "alias" : "car_sales_ca",
+            "expression" : "((('car-sales-us-no-ca_1'['body'] = car_sales_ca.body) AND ('car-sales-us-no-ca_1'['color'] = car_sales_ca.color)) AND ('car-sales-us-no-ca_1'['condition'] = car_sales_ca.condition))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "state",
+            "expression" : "'car-sales-us-no-ca_1'['state']"
+          }, {
+            "alias" : "trim",
+            "expression" : "'car-sales-us-no-ca_1'['trim']"
+          }, {
+            "alias" : "interior",
+            "expression" : "'car-sales-us-no-ca_1'['interior']"
+          }, {
+            "alias" : "model",
+            "expression" : "'car-sales-us-no-ca_1'['model']"
+          }, {
+            "alias" : "make",
+            "expression" : "'car-sales-us-no-ca_1'['make']"
+          }, {
+            "alias" : "odometer",
+            "expression" : "'car-sales-us-no-ca_1'['odometer']"
+          }, {
+            "alias" : "seller",
+            "expression" : "'car-sales-us-no-ca_1'['seller']"
+          }, {
+            "alias" : "transmission",
+            "expression" : "'car-sales-us-no-ca_1'['transmission']"
+          }, {
+            "alias" : "body",
+            "expression" : "'car-sales-us-no-ca_1'['body']"
+          }, {
+            "alias" : "condition",
+            "expression" : "'car-sales-us-no-ca_1'['condition']"
+          }, {
+            "alias" : "sellingprice",
+            "expression" : "'car-sales-us-no-ca_1'['sellingprice']"
+          }, {
+            "alias" : "mmr",
+            "expression" : "'car-sales-us-no-ca_1'['mmr']"
+          }, {
+            "alias" : "color",
+            "expression" : "'car-sales-us-no-ca_1'['color']"
+          }, {
+            "alias" : "saledate",
+            "expression" : "'car-sales-us-no-ca_1'['saledate']"
+          }, {
+            "alias" : "year",
+            "expression" : "'car-sales-us-no-ca_1'['year']"
+          }, {
+            "alias" : "vin",
+            "expression" : "'car-sales-us-no-ca_1'['vin']"
+          } ],
+          "headAlias" : "datasets/car-sales-ca"
+        }
+      } ]
+    } ],
     "pipelineSettingsInfo" : {
-      "applicationName" : "basics",
+      "applicationName" : "",
       "hasApplication" : true,
       "isFunctionsPackageDirDefined" : true
     },
@@ -73,16 +296,418 @@
     "topLevelPackage" : "basics",
     "configurationVersion" : "v2"
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "C7veHrOJCdEKipiCpv0Ad$$Yv3RMGoAWPxQIximWeXJW",
+    "source" : "HFlGGB0g",
+    "sourcePort" : "qlidUDyw",
+    "target" : "uPEDwuibhBqlTPwCTRpG0$$E5QiA58AtgNnlOhYRjBZA",
+    "targetPort" : "zK5B0bqED9AZ1sXEe1zda$$JGqzvmylz5QprXkROBKpv"
+  }, {
+    "id" : "_ipOC_1vYOEb302KNvdme$$wPw0x5wmwVJnWPlPHsxKa",
+    "source" : "uPEDwuibhBqlTPwCTRpG0$$E5QiA58AtgNnlOhYRjBZA",
+    "sourcePort" : "CI_tGMgdqWqCg9vXqJW-V$$saWvS2Nad0zjnLAu2rI-Z",
+    "target" : "NRS83Q8i4jdkltK3a2eGx$$hnhaRvtSBX5ovBKJCXb2X",
+    "targetPort" : "FnFyTVOqGD_qHyrprePBz$$3TlOnhqkOuuZfAN_pQB8b"
+  }, {
+    "id" : "CNLw6ALYa2xBcy1M2ai-N",
+    "source" : "e9cD2YFmK6ZX4PVR4LCzi$$ifH-5RAd-DSpied-s5zR8",
+    "sourcePort" : "aZWO98C8swWKc8dfNXAqG$$oq3bwroB9ltK_P_eJzvJX",
+    "target" : "EuLSx2eqEU5NgVrJTCv50$$dwt8Cbi-6tfO8fGPQibzH",
+    "targetPort" : "_FXD7D-68IdSvevLCCLtm$$T-uwkXQmp9VxWbKJ2Z60m"
+  }, {
+    "id" : "zUZxs3V4EDKsyMZLaoe04",
+    "source" : "EuLSx2eqEU5NgVrJTCv50$$dwt8Cbi-6tfO8fGPQibzH",
+    "sourcePort" : "MqpyzcuTyEFK-VJRXXu1Y$$WvPZ8otgPUEXTEAdlO-xe",
+    "target" : "c15T0kUCklv7FeaVkaeCx$$XS3WPEIyyhH8ThgBZtb66",
+    "targetPort" : "yNn35SkyowQvxbkiPB9t8$$Nrg9wErErn2xAsuYyuYtj"
+  } ],
   "processes" : {
-    "gJDyG-A7Ss8JLXoed8zr7$$VD3VGDQf2rbxwSDzrNDdb" : {
-      "id" : "gJDyG-A7Ss8JLXoed8zr7$$VD3VGDQf2rbxwSDzrNDdb",
+    "uPEDwuibhBqlTPwCTRpG0$$E5QiA58AtgNnlOhYRjBZA" : {
+      "id" : "uPEDwuibhBqlTPwCTRpG0$$E5QiA58AtgNnlOhYRjBZA",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_by_state_ca",
+        "slug" : "filter_by_state_ca",
+        "x" : -120,
+        "y" : -80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Filters records to include only those from California.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zK5B0bqED9AZ1sXEe1zda$$JGqzvmylz5QprXkROBKpv",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The model year of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "make",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The manufacturer of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "model",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "trim",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific trim level of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "body",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of the vehicle's body style",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "transmission",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of transmission in the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "vin",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the vehicle is located or registered",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "condition",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "odometer",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The recorded mileage of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "color",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "interior",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the vehicle's interior features and materials",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "seller",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the individual or entity selling the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mmr",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The market value of the vehicle based on its condition and specifications",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sellingprice",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The price at which the vehicle was sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "saledate",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the vehicle was sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "CI_tGMgdqWqCg9vXqJW-V$$saWvS2Nad0zjnLAu2rI-Z",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "zK5B0bqED9AZ1sXEe1zda$$JGqzvmylz5QprXkROBKpv##state" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "state = \"ca\""
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.34&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "EuLSx2eqEU5NgVrJTCv50$$dwt8Cbi-6tfO8fGPQibzH" : {
+      "id" : "EuLSx2eqEU5NgVrJTCv50$$dwt8Cbi-6tfO8fGPQibzH",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_by_state_ca_1",
+        "slug" : "filter_by_state_ca_1",
+        "x" : -100,
+        "y" : 80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Excludes data from customers located in California.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_FXD7D-68IdSvevLCCLtm$$T-uwkXQmp9VxWbKJ2Z60m",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The model year of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "make",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The manufacturer of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "model",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "trim",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific trim level of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "body",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of the vehicle's body style",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "transmission",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of transmission in the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "vin",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the vehicle is located or registered",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "condition",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "odometer",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The recorded mileage of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "color",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "interior",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the vehicle's interior features and materials",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "seller",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the individual or entity selling the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mmr",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The market value of the vehicle based on its condition and specifications",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sellingprice",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The price at which the vehicle was sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "saledate",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the vehicle was sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "MqpyzcuTyEFK-VJRXXu1Y$$WvPZ8otgPUEXTEAdlO-xe",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "_FXD7D-68IdSvevLCCLtm$$T-uwkXQmp9VxWbKJ2Z60m##state" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "state != \"ca\""
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.34&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "HFlGGB0g" : {
+      "id" : "HFlGGB0g",
       "component" : "Source",
       "metadata" : {
-        "label" : "input0",
-        "slug" : "input0",
-        "x" : -4480,
-        "y" : -1120,
+        "label" : "car-sales",
+        "slug" : "car_sales",
+        "x" : -280,
+        "y" : -80,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -91,7 +716,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "Igh8Deu03wbqVbajA2tNn$$4Ur-IWD2eqel5uUNlB6WP",
+          "id" : "qlidUDyw",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -99,7 +724,417 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "datasetId" : "datasets/input0"
+        "datasetId" : "datasets/car-sales"
+      }
+    },
+    "c15T0kUCklv7FeaVkaeCx$$XS3WPEIyyhH8ThgBZtb66" : {
+      "id" : "c15T0kUCklv7FeaVkaeCx$$XS3WPEIyyhH8ThgBZtb66",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "car-sales-us-no-ca",
+        "slug" : "car_sales_us_no_ca",
+        "x" : 60,
+        "y" : 80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Stores car sales data from the US, excluding California, in a structured format for efficient querying and analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yNn35SkyowQvxbkiPB9t8$$Nrg9wErErn2xAsuYyuYtj",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The model year of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "make",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The manufacturer of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "model",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "trim",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific trim level of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "body",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of the vehicle's body style",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "transmission",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of transmission in the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "vin",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the vehicle is located or registered",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "condition",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "odometer",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The recorded mileage of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "color",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "interior",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the vehicle's interior features and materials",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "seller",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the individual or entity selling the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mmr",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The market value of the vehicle based on its condition and specifications",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sellingprice",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The price at which the vehicle was sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "saledate",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the vehicle was sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/car-sales-ca"
+      }
+    },
+    "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI" : {
+      "id" : "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "car-sales-us-no-ca_1",
+        "slug" : "car_sales_us_no_ca_1",
+        "x" : -280,
+        "y" : 260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "4XGYfeCGZo0kFn-dMBKEE$$cC8TssGwf4tqbiY6IGk0k",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/car-sales-us-no-ca"
+      }
+    },
+    "e9cD2YFmK6ZX4PVR4LCzi$$ifH-5RAd-DSpied-s5zR8" : {
+      "id" : "e9cD2YFmK6ZX4PVR4LCzi$$ifH-5RAd-DSpied-s5zR8",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "car-sales_1",
+        "slug" : "car_sales_1",
+        "x" : -260,
+        "y" : 80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "aZWO98C8swWKc8dfNXAqG$$oq3bwroB9ltK_P_eJzvJX",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/car-sales"
+      }
+    },
+    "NRS83Q8i4jdkltK3a2eGx$$hnhaRvtSBX5ovBKJCXb2X" : {
+      "id" : "NRS83Q8i4jdkltK3a2eGx$$hnhaRvtSBX5ovBKJCXb2X",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "car-sales-ca",
+        "slug" : "car_sales_ca",
+        "x" : 40,
+        "y" : -80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Stores car sales data in a structured format for future analysis and reporting.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "FnFyTVOqGD_qHyrprePBz$$3TlOnhqkOuuZfAN_pQB8b",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The model year of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "make",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The manufacturer of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "model",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "trim",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific trim level of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "body",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of the vehicle's body style",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "transmission",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of transmission in the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "vin",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the vehicle is located or registered",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "condition",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "odometer",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The recorded mileage of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "color",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the vehicle being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "interior",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the vehicle's interior features and materials",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "seller",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the individual or entity selling the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mmr",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The market value of the vehicle based on its condition and specifications",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sellingprice",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The price at which the vehicle was sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "saledate",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the vehicle was sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/car-sales-ca"
       }
     }
   },

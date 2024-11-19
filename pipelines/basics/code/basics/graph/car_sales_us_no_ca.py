@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from basics.config.ConfigStore import *
 from basics.functions import *
 
-def input0(spark: SparkSession) -> DataFrame:
-    return spark.read.table("`hive_metastore`.`nyc_taxi`.`nyc_taxi`")
+def car_sales_us_no_ca(spark: SparkSession, in0: DataFrame):
+    in0.write.format("parquet").mode("overwrite").save("/Volumes/michael/onboard/sales-data/car-sales-no-ca")
