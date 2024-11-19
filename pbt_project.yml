@@ -21,8 +21,8 @@ pipelines:
     createdAt: '2024-11-12 17:41:01'
     datasets:
       inputs:
+      - datasets/car-mfg-by-country
       - datasets/car-sales
-      - datasets/car-sales-us-no-ca
       outputs:
       - datasets/car-sales-ca
     subgraphs: []
@@ -93,6 +93,19 @@ datasets:
         description: ''
         author: michael@prophecy.io
         createdAt: '2024-11-19 17:58:07'
+  datasets/car-mfg-by-country:
+    name: car-mfg-by-country
+    description: ''
+    author: michael@prophecy.io
+    createdAt: '2024-11-19 19:15:18'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 19010
+        datasetType: File
+        description: ''
+        author: michael@prophecy.io
+        createdAt: '2024-11-19 19:15:18'
 templates: {}
 jobs: {}
 gemContainer:

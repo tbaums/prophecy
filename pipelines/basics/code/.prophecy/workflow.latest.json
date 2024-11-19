@@ -18,65 +18,68 @@
       "sourceLabel" : "car_sales",
       "sourceDatasetId" : "datasets/car-sales",
       "canJoinWith" : [ {
-        "processLabel" : "car-sales-us-no-ca_1",
-        "processId" : "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI",
-        "joinColumns" : [ "body", "color", "condition" ],
+        "processLabel" : "car-mfg-by-country",
+        "processId" : "NlGdzDYE_aL7OYIaLM-0Z$$LpnCmRrK1xKB4m_i3FG9G",
+        "joinColumns" : [ "make" ],
         "isRecommended" : true,
         "properties" : {
-          "columnsSelector" : [ "body", "color", "condition" ],
+          "columnsSelector" : [ "make" ],
           "conditions" : [ {
             "alias" : "car_sales",
-            "expression" : "((('car-sales-us-no-ca_1'['body'] = car_sales.body) AND ('car-sales-us-no-ca_1'['color'] = car_sales.color)) AND ('car-sales-us-no-ca_1'['condition'] = car_sales.condition))",
+            "expression" : "('car-mfg-by-country'['make'] = car_sales.make)",
             "joinType" : "inner"
           } ],
           "expressions" : [ {
-            "alias" : "state",
-            "expression" : "'car-sales-us-no-ca_1'['state']"
-          }, {
-            "alias" : "trim",
-            "expression" : "'car-sales-us-no-ca_1'['trim']"
-          }, {
-            "alias" : "interior",
-            "expression" : "'car-sales-us-no-ca_1'['interior']"
+            "alias" : "year",
+            "expression" : "car_sales.year"
           }, {
             "alias" : "model",
-            "expression" : "'car-sales-us-no-ca_1'['model']"
+            "expression" : "car_sales.model"
           }, {
-            "alias" : "make",
-            "expression" : "'car-sales-us-no-ca_1'['make']"
-          }, {
-            "alias" : "odometer",
-            "expression" : "'car-sales-us-no-ca_1'['odometer']"
-          }, {
-            "alias" : "seller",
-            "expression" : "'car-sales-us-no-ca_1'['seller']"
-          }, {
-            "alias" : "transmission",
-            "expression" : "'car-sales-us-no-ca_1'['transmission']"
+            "alias" : "trim",
+            "expression" : "car_sales.trim"
           }, {
             "alias" : "body",
-            "expression" : "'car-sales-us-no-ca_1'['body']"
+            "expression" : "car_sales.body"
           }, {
-            "alias" : "condition",
-            "expression" : "'car-sales-us-no-ca_1'['condition']"
-          }, {
-            "alias" : "sellingprice",
-            "expression" : "'car-sales-us-no-ca_1'['sellingprice']"
-          }, {
-            "alias" : "mmr",
-            "expression" : "'car-sales-us-no-ca_1'['mmr']"
-          }, {
-            "alias" : "color",
-            "expression" : "'car-sales-us-no-ca_1'['color']"
-          }, {
-            "alias" : "saledate",
-            "expression" : "'car-sales-us-no-ca_1'['saledate']"
-          }, {
-            "alias" : "year",
-            "expression" : "'car-sales-us-no-ca_1'['year']"
+            "alias" : "transmission",
+            "expression" : "car_sales.transmission"
           }, {
             "alias" : "vin",
-            "expression" : "'car-sales-us-no-ca_1'['vin']"
+            "expression" : "car_sales.vin"
+          }, {
+            "alias" : "state",
+            "expression" : "car_sales.state"
+          }, {
+            "alias" : "condition",
+            "expression" : "car_sales.condition"
+          }, {
+            "alias" : "odometer",
+            "expression" : "car_sales.odometer"
+          }, {
+            "alias" : "color",
+            "expression" : "car_sales.color"
+          }, {
+            "alias" : "interior",
+            "expression" : "car_sales.interior"
+          }, {
+            "alias" : "seller",
+            "expression" : "car_sales.seller"
+          }, {
+            "alias" : "mmr",
+            "expression" : "car_sales.mmr"
+          }, {
+            "alias" : "sellingprice",
+            "expression" : "car_sales.sellingprice"
+          }, {
+            "alias" : "saledate",
+            "expression" : "car_sales.saledate"
+          }, {
+            "alias" : "make",
+            "expression" : "'car-mfg-by-country'['make']"
+          }, {
+            "alias" : "country",
+            "expression" : "'car-mfg-by-country'['country']"
           } ],
           "headAlias" : "datasets/car-sales"
         }
@@ -85,15 +88,15 @@
       "sourceLabel" : "car_title_status",
       "sourceDatasetId" : "datasets/car-title-status",
       "canJoinWith" : [ {
-        "processLabel" : "car-sales-us-no-ca_1",
-        "processId" : "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI",
-        "joinColumns" : [ "color", "condition", "model" ],
+        "processLabel" : "car-mfg-by-country",
+        "processId" : "NlGdzDYE_aL7OYIaLM-0Z$$LpnCmRrK1xKB4m_i3FG9G",
+        "joinColumns" : [ "country" ],
         "isRecommended" : true,
         "properties" : {
-          "columnsSelector" : [ "color", "condition", "model" ],
+          "columnsSelector" : [ "country" ],
           "conditions" : [ {
             "alias" : "car_title_status",
-            "expression" : "((('car-sales-us-no-ca_1'['color'] = car_title_status.color) AND ('car-sales-us-no-ca_1'['condition'] = car_title_status.condition)) AND ('car-sales-us-no-ca_1'['model'] = car_title_status.model))",
+            "expression" : "('car-mfg-by-country'['country'] = car_title_status.country)",
             "joinType" : "inner"
           } ],
           "expressions" : [ {
@@ -106,132 +109,178 @@
             "alias" : "brand",
             "expression" : "car_title_status.brand"
           }, {
+            "alias" : "model",
+            "expression" : "car_title_status.model"
+          }, {
+            "alias" : "year",
+            "expression" : "car_title_status.year"
+          }, {
             "alias" : "title_status",
             "expression" : "car_title_status.title_status"
           }, {
             "alias" : "mileage",
             "expression" : "car_title_status.mileage"
           }, {
+            "alias" : "color",
+            "expression" : "car_title_status.color"
+          }, {
+            "alias" : "vin",
+            "expression" : "car_title_status.vin"
+          }, {
             "alias" : "lot",
             "expression" : "car_title_status.lot"
           }, {
-            "alias" : "country",
-            "expression" : "car_title_status.country"
-          }, {
             "alias" : "state",
-            "expression" : "'car-sales-us-no-ca_1'['state']"
-          }, {
-            "alias" : "trim",
-            "expression" : "'car-sales-us-no-ca_1'['trim']"
-          }, {
-            "alias" : "interior",
-            "expression" : "'car-sales-us-no-ca_1'['interior']"
-          }, {
-            "alias" : "model",
-            "expression" : "'car-sales-us-no-ca_1'['model']"
-          }, {
-            "alias" : "make",
-            "expression" : "'car-sales-us-no-ca_1'['make']"
-          }, {
-            "alias" : "odometer",
-            "expression" : "'car-sales-us-no-ca_1'['odometer']"
-          }, {
-            "alias" : "seller",
-            "expression" : "'car-sales-us-no-ca_1'['seller']"
-          }, {
-            "alias" : "transmission",
-            "expression" : "'car-sales-us-no-ca_1'['transmission']"
-          }, {
-            "alias" : "body",
-            "expression" : "'car-sales-us-no-ca_1'['body']"
+            "expression" : "car_title_status.state"
           }, {
             "alias" : "condition",
-            "expression" : "'car-sales-us-no-ca_1'['condition']"
+            "expression" : "car_title_status.condition"
           }, {
-            "alias" : "sellingprice",
-            "expression" : "'car-sales-us-no-ca_1'['sellingprice']"
+            "alias" : "make",
+            "expression" : "'car-mfg-by-country'['make']"
           }, {
-            "alias" : "mmr",
-            "expression" : "'car-sales-us-no-ca_1'['mmr']"
-          }, {
-            "alias" : "color",
-            "expression" : "'car-sales-us-no-ca_1'['color']"
-          }, {
-            "alias" : "saledate",
-            "expression" : "'car-sales-us-no-ca_1'['saledate']"
-          }, {
-            "alias" : "year",
-            "expression" : "'car-sales-us-no-ca_1'['year']"
-          }, {
-            "alias" : "vin",
-            "expression" : "'car-sales-us-no-ca_1'['vin']"
+            "alias" : "country",
+            "expression" : "'car-mfg-by-country'['country']"
           } ],
           "headAlias" : "datasets/car-title-status"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "car_sales_us_no_ca",
+      "sourceDatasetId" : "datasets/car-sales-us-no-ca",
+      "canJoinWith" : [ {
+        "processLabel" : "car-mfg-by-country",
+        "processId" : "NlGdzDYE_aL7OYIaLM-0Z$$LpnCmRrK1xKB4m_i3FG9G",
+        "joinColumns" : [ "make" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "make" ],
+          "conditions" : [ {
+            "alias" : "car_sales_us_no_ca",
+            "expression" : "('car-mfg-by-country'['make'] = car_sales_us_no_ca.make)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "year",
+            "expression" : "car_sales_us_no_ca.year"
+          }, {
+            "alias" : "model",
+            "expression" : "car_sales_us_no_ca.model"
+          }, {
+            "alias" : "trim",
+            "expression" : "car_sales_us_no_ca.trim"
+          }, {
+            "alias" : "body",
+            "expression" : "car_sales_us_no_ca.body"
+          }, {
+            "alias" : "transmission",
+            "expression" : "car_sales_us_no_ca.transmission"
+          }, {
+            "alias" : "vin",
+            "expression" : "car_sales_us_no_ca.vin"
+          }, {
+            "alias" : "state",
+            "expression" : "car_sales_us_no_ca.state"
+          }, {
+            "alias" : "condition",
+            "expression" : "car_sales_us_no_ca.condition"
+          }, {
+            "alias" : "odometer",
+            "expression" : "car_sales_us_no_ca.odometer"
+          }, {
+            "alias" : "color",
+            "expression" : "car_sales_us_no_ca.color"
+          }, {
+            "alias" : "interior",
+            "expression" : "car_sales_us_no_ca.interior"
+          }, {
+            "alias" : "seller",
+            "expression" : "car_sales_us_no_ca.seller"
+          }, {
+            "alias" : "mmr",
+            "expression" : "car_sales_us_no_ca.mmr"
+          }, {
+            "alias" : "sellingprice",
+            "expression" : "car_sales_us_no_ca.sellingprice"
+          }, {
+            "alias" : "saledate",
+            "expression" : "car_sales_us_no_ca.saledate"
+          }, {
+            "alias" : "make",
+            "expression" : "'car-mfg-by-country'['make']"
+          }, {
+            "alias" : "country",
+            "expression" : "'car-mfg-by-country'['country']"
+          } ],
+          "headAlias" : "datasets/car-sales-us-no-ca"
         }
       } ]
     }, {
       "sourceLabel" : "car_sales_ca",
       "sourceDatasetId" : "datasets/car-sales-ca",
       "canJoinWith" : [ {
-        "processLabel" : "car-sales-us-no-ca_1",
-        "processId" : "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI",
-        "joinColumns" : [ "body", "color", "condition" ],
+        "processLabel" : "car-mfg-by-country",
+        "processId" : "NlGdzDYE_aL7OYIaLM-0Z$$LpnCmRrK1xKB4m_i3FG9G",
+        "joinColumns" : [ "make" ],
         "isRecommended" : true,
         "properties" : {
-          "columnsSelector" : [ "body", "color", "condition" ],
+          "columnsSelector" : [ "make" ],
           "conditions" : [ {
             "alias" : "car_sales_ca",
-            "expression" : "((('car-sales-us-no-ca_1'['body'] = car_sales_ca.body) AND ('car-sales-us-no-ca_1'['color'] = car_sales_ca.color)) AND ('car-sales-us-no-ca_1'['condition'] = car_sales_ca.condition))",
+            "expression" : "('car-mfg-by-country'['make'] = car_sales_ca.make)",
             "joinType" : "inner"
           } ],
           "expressions" : [ {
-            "alias" : "state",
-            "expression" : "'car-sales-us-no-ca_1'['state']"
-          }, {
-            "alias" : "trim",
-            "expression" : "'car-sales-us-no-ca_1'['trim']"
-          }, {
-            "alias" : "interior",
-            "expression" : "'car-sales-us-no-ca_1'['interior']"
+            "alias" : "year",
+            "expression" : "car_sales_ca.year"
           }, {
             "alias" : "model",
-            "expression" : "'car-sales-us-no-ca_1'['model']"
+            "expression" : "car_sales_ca.model"
           }, {
-            "alias" : "make",
-            "expression" : "'car-sales-us-no-ca_1'['make']"
-          }, {
-            "alias" : "odometer",
-            "expression" : "'car-sales-us-no-ca_1'['odometer']"
-          }, {
-            "alias" : "seller",
-            "expression" : "'car-sales-us-no-ca_1'['seller']"
-          }, {
-            "alias" : "transmission",
-            "expression" : "'car-sales-us-no-ca_1'['transmission']"
+            "alias" : "trim",
+            "expression" : "car_sales_ca.trim"
           }, {
             "alias" : "body",
-            "expression" : "'car-sales-us-no-ca_1'['body']"
+            "expression" : "car_sales_ca.body"
           }, {
-            "alias" : "condition",
-            "expression" : "'car-sales-us-no-ca_1'['condition']"
-          }, {
-            "alias" : "sellingprice",
-            "expression" : "'car-sales-us-no-ca_1'['sellingprice']"
-          }, {
-            "alias" : "mmr",
-            "expression" : "'car-sales-us-no-ca_1'['mmr']"
-          }, {
-            "alias" : "color",
-            "expression" : "'car-sales-us-no-ca_1'['color']"
-          }, {
-            "alias" : "saledate",
-            "expression" : "'car-sales-us-no-ca_1'['saledate']"
-          }, {
-            "alias" : "year",
-            "expression" : "'car-sales-us-no-ca_1'['year']"
+            "alias" : "transmission",
+            "expression" : "car_sales_ca.transmission"
           }, {
             "alias" : "vin",
-            "expression" : "'car-sales-us-no-ca_1'['vin']"
+            "expression" : "car_sales_ca.vin"
+          }, {
+            "alias" : "state",
+            "expression" : "car_sales_ca.state"
+          }, {
+            "alias" : "condition",
+            "expression" : "car_sales_ca.condition"
+          }, {
+            "alias" : "odometer",
+            "expression" : "car_sales_ca.odometer"
+          }, {
+            "alias" : "color",
+            "expression" : "car_sales_ca.color"
+          }, {
+            "alias" : "interior",
+            "expression" : "car_sales_ca.interior"
+          }, {
+            "alias" : "seller",
+            "expression" : "car_sales_ca.seller"
+          }, {
+            "alias" : "mmr",
+            "expression" : "car_sales_ca.mmr"
+          }, {
+            "alias" : "sellingprice",
+            "expression" : "car_sales_ca.sellingprice"
+          }, {
+            "alias" : "saledate",
+            "expression" : "car_sales_ca.saledate"
+          }, {
+            "alias" : "make",
+            "expression" : "'car-mfg-by-country'['make']"
+          }, {
+            "alias" : "country",
+            "expression" : "'car-mfg-by-country'['country']"
           } ],
           "headAlias" : "datasets/car-sales-ca"
         }
@@ -905,14 +954,14 @@
         "datasetId" : "datasets/car-sales-ca"
       }
     },
-    "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI" : {
-      "id" : "3gDt_aKSDn5HjaBgfjWiR$$rxkDIH-ge1RUyQ25QE7mI",
+    "NlGdzDYE_aL7OYIaLM-0Z$$LpnCmRrK1xKB4m_i3FG9G" : {
+      "id" : "NlGdzDYE_aL7OYIaLM-0Z$$LpnCmRrK1xKB4m_i3FG9G",
       "component" : "Source",
       "metadata" : {
-        "label" : "car-sales-us-no-ca_1",
-        "slug" : "car_sales_us_no_ca_1",
+        "label" : "car-mfg-by-country",
+        "slug" : "car_mfg_by_country",
         "x" : -280,
-        "y" : 260,
+        "y" : -260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -921,7 +970,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "4XGYfeCGZo0kFn-dMBKEE$$cC8TssGwf4tqbiY6IGk0k",
+          "id" : "gGISxe71J4xdp0613GjBn$$RcqlHrZeZvKjhWMi4U30f",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -929,7 +978,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "datasetId" : "datasets/car-sales-us-no-ca"
+        "datasetId" : "datasets/car-mfg-by-country"
       }
     },
     "e9cD2YFmK6ZX4PVR4LCzi$$ifH-5RAd-DSpied-s5zR8" : {
