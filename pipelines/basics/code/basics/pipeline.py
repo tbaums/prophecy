@@ -9,11 +9,13 @@ from basics.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_car_sales = car_sales(spark)
     df_filter_by_state_ca = filter_by_state_ca(spark, df_car_sales)
+    df_car_details_ca = car_details_ca(spark, df_filter_by_state_ca)
     df_car_sales_1 = car_sales_1(spark)
     df_filter_by_state_ca_1 = filter_by_state_ca_1(spark, df_car_sales_1)
-    car_sales_us_no_ca(spark, df_filter_by_state_ca_1)
+    df_car_details_ca_1 = car_details_ca_1(spark, df_filter_by_state_ca_1)
+    car_sales_us_no_ca(spark, df_car_details_ca_1)
     df_car_mfg_by_country = car_mfg_by_country(spark)
-    car_sales_ca(spark, df_filter_by_state_ca)
+    car_sales_ca(spark, df_car_details_ca)
 
 def main():
     spark = SparkSession.builder\
