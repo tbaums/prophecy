@@ -1,0 +1,275 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.4.0",
+        "pyPiVersion" : "1.9.24"
+      },
+      "sparkConfigJinjaEnabled" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/heartbeat",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "heartbeat",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "19010",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "michaelprophecyioteam.heartbeat.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "heartbeat",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "42VpZv6EaEbHiySomkCna",
+    "source" : "ElV2JWzW2kMcknFNjD6fR$$RLSENfHjtiCc_5hdxg3Lc",
+    "sourcePort" : "HqR9bHut7Xx3YqDICQv-j$$xsY35eJZwczn0RrnrlHvQ",
+    "target" : "NtlWcSw9vwajBNbC9KjYs$$3FfoW0UAH8SZk56GjWDks",
+    "targetPort" : "7icgSwhsJAwLAz71enPnr$$3LMGvc6P609WrcGg3MxOH"
+  } ],
+  "processes" : {
+    "ElV2JWzW2kMcknFNjD6fR$$RLSENfHjtiCc_5hdxg3Lc" : {
+      "id" : "ElV2JWzW2kMcknFNjD6fR$$RLSENfHjtiCc_5hdxg3Lc",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "heartbeat_data",
+        "slug" : "heartbeat_data",
+        "x" : -740,
+        "y" : -320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "HqR9bHut7Xx3YqDICQv-j$$xsY35eJZwczn0RrnrlHvQ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/heartbeat_data"
+      }
+    },
+    "NtlWcSw9vwajBNbC9KjYs$$3FfoW0UAH8SZk56GjWDks" : {
+      "id" : "NtlWcSw9vwajBNbC9KjYs$$3FfoW0UAH8SZk56GjWDks",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "slug" : "Limit_1",
+        "x" : -600,
+        "y" : -320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7icgSwhsJAwLAz71enPnr$$3LMGvc6P609WrcGg3MxOH",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "An identifier for the record in the dataset",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The selling price of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "brand",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The brand of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "model",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The manufacturing year of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "title_status",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The legal status of the vehicle's title",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mileage",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The distance the vehicle has traveled, indicating its usage.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "color",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "vin",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lot",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Identifier for the auction lot where the vehicle is listed",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the vehicle is located",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Country where the vehicle is located",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "condition",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "daMAVYfCVzNmxuQj4R1XY$$NCRtbrMId5QueXhHIDfKV",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "10"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.36&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

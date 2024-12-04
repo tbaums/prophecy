@@ -1,0 +1,95 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: id
+    type: string
+    nullable: true
+    metadata:
+      description: An identifier for the record in the dataset
+      mappings: []
+      tags: []
+  - name: price
+    type: string
+    nullable: true
+    metadata:
+      description: The selling price of the vehicle
+      mappings: []
+      tags: []
+  - name: brand
+    type: string
+    nullable: true
+    metadata:
+      description: The brand of the vehicle
+      mappings: []
+      tags: []
+  - name: model
+    type: string
+    nullable: true
+    metadata:
+      description: The specific model of the vehicle
+      mappings: []
+      tags: []
+  - name: year
+    type: string
+    nullable: true
+    metadata:
+      description: The manufacturing year of the vehicle
+      mappings: []
+      tags: []
+  - name: title_status
+    type: string
+    nullable: true
+    metadata:
+      description: The legal status of the vehicle's title
+      mappings: []
+      tags: []
+  - name: mileage
+    type: string
+    nullable: true
+    metadata:
+      description: The distance the vehicle has traveled, indicating its usage.
+      mappings: []
+      tags: []
+  - name: color
+    type: string
+    nullable: true
+    metadata:
+      description: Color of the vehicle
+      mappings: []
+      tags: []
+  - name: vin
+    type: string
+    nullable: true
+    metadata:
+      description: The unique Vehicle Identification Number for the car
+      mappings: []
+      tags: []
+  - name: lot
+    type: string
+    nullable: true
+    metadata:
+      description: Identifier for the auction lot where the vehicle is listed
+      mappings: []
+      tags: []
+  - name: state
+    type: string
+    nullable: true
+    metadata:
+      description: The state where the vehicle is located
+      mappings: []
+      tags: []
+  - name: country
+    type: string
+    nullable: true
+    metadata:
+      description: Country where the vehicle is located
+      mappings: []
+      tags: []
+  - name: condition
+    type: string
+    nullable: true
+    metadata:
+      description: The overall condition of the vehicle
+      mappings: []
+      tags: []
