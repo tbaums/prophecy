@@ -126,7 +126,7 @@
       "language" : "python",
       "udfs" : [ ],
       "functionPackageName" : "michaelprophecyioteam.customeranalysis.functions",
-      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+      "sharedFunctionPackageNames" : [ "prophecy.data_quality.functions", "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
     },
     "udafs" : {
       "language" : "python",
@@ -153,6 +153,10 @@
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
     "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "32699",
+      "projectName" : "ProphecySparkDataQualityPython",
+      "externalDependencies" : [ ]
+    }, {
       "projectUID" : "12654",
       "projectName" : "ProphecySparkBasicsPython",
       "externalDependencies" : [ ]

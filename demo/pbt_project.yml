@@ -12,7 +12,7 @@ buildSystemDetails:
   createdAt: '2024-11-19 21:54:46'
 pipelines:
   pipelines/bronze:
-    name: bronze
+    name: demo_bronze
     description: ''
     author: michael@prophecy.io
     mode: batch
@@ -27,35 +27,24 @@ pipelines:
     subgraphs: []
     dependencies: {}
   pipelines/silver:
-    name: silver
-    description: Generates a summary of sales by customer, combining order and customer
-      details. It calculates the total sales and order count for each customer, projecting
-      their full names. The results are sorted by total sales, and only the top 25
-      customers are retained for final output.
+    name: demo_silver
+    description: Analyzes sales data by merging customer and order information. It
+      reformats names, extracts company names from emails, and summarizes sales by
+      customer. The final output presents the top 25 customers based on total sales,
+      providing insights into customer order counts and sales totals.
     author: michael@prophecy.io
     mode: batch
     artefactID: ''
     language: python
     createdAt: '2024-11-19 21:56:31'
     datasets:
-      inputs: []
+      inputs:
+      - datasets/customers
+      - datasets/orders
       outputs: []
     subgraphs: []
     dependencies: {}
 datasets:
-  datasets/customers:
-    name: customers
-    description: ''
-    author: michael@prophecy.io
-    createdAt: '2024-11-19 21:55:37'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 19010
-        datasetType: File
-        description: ''
-        author: michael@prophecy.io
-        createdAt: '2024-11-19 21:55:37'
   datasets/orders:
     name: orders
     description: ''
@@ -69,6 +58,19 @@ datasets:
         description: ''
         author: michael@prophecy.io
         createdAt: '2024-11-19 21:56:16'
+  datasets/customers:
+    name: customers
+    description: ''
+    author: michael@prophecy.io
+    createdAt: '2024-12-06 18:22:40'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 19010
+        datasetType: File
+        description: ''
+        author: michael@prophecy.io
+        createdAt: '2024-12-06 18:22:40'
 templates: {}
 jobs: {}
 gemContainer:
@@ -119,10 +121,18 @@ projectDependencies:
     projectUID: 12654
     projectName: ProphecySparkBasicsPython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
-    version: 0.2.34
+    version: 0.2.36
     isDefault: true
     author: null
-    createdAt: '2024-11-19 21:54:31'
+    createdAt: '2024-12-06 18:08:58'
+  '32699':
+    projectUID: 32699
+    projectName: ProphecySparkDataQualityPython
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/gLsx7fee_project_32699.git&subPath=
+    version: 0.0.1
+    isDefault: false
+    author: null
+    createdAt: '2024-11-22 21:19:31'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

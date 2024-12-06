@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(
-    name = 'bronze',
+    name = 'demo_bronze',
     version = '1.0',
     packages = find_packages(include = ('bronze*', )) + ['prophecy_config_instances'],
     package_dir = {'prophecy_config_instances' : 'configs/resources/config'},

@@ -34,7 +34,7 @@ schema:
     type: string
     nullable: true
     metadata:
-      description: Contact number of the customer
+      description: Contact phone number of the customer
       mappings: []
       tags: []
   - name: address
