@@ -1,6 +1,6 @@
 name: customer-analysis
 description: ''
-version: 0.0.1
+version: 0.0.3
 author: michael@prophecy.io
 language: python
 buildSystem: ''
