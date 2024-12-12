@@ -3,8 +3,8 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.utils import *
 from prophecy.libs import typed_lit
-from silver.config.ConfigStore import *
-from silver.functions import *
+from demo_gold.config.ConfigStore import *
+from demo_gold.functions import *
 
 def reformatted_order_details(spark: SparkSession, reformatted_orders: DataFrame) -> DataFrame:
     return reformatted_orders.select(

@@ -38,10 +38,24 @@ pipelines:
     language: python
     createdAt: '2024-11-19 21:56:31'
     datasets:
+      inputs: []
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+  pipelines/demo_gold:
+    name: demo_gold
+    description: ''
+    author: michael@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-12-12 16:25:46'
+    datasets:
       inputs:
       - datasets/customers
       - datasets/orders
-      outputs: []
+      outputs:
+      - datasets/top_25
     subgraphs: []
     dependencies: {}
 datasets:
@@ -71,6 +85,19 @@ datasets:
         description: ''
         author: michael@prophecy.io
         createdAt: '2024-12-06 18:22:40'
+  datasets/top_25:
+    name: top_25
+    description: ''
+    author: michael@prophecy.io
+    createdAt: '2024-12-12 16:24:05'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 19010
+        datasetType: Database
+        description: ''
+        author: michael@prophecy.io
+        createdAt: '2024-12-12 16:24:05'
 templates: {}
 jobs: {}
 gemContainer:
