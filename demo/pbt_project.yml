@@ -38,7 +38,9 @@ pipelines:
     language: python
     createdAt: '2024-11-19 21:56:31'
     datasets:
-      inputs: []
+      inputs:
+      - datasets/customers
+      - datasets/orders
       outputs: []
     subgraphs: []
     dependencies: {}
@@ -125,16 +127,20 @@ sqlPipeline: null
 dependencies:
 - modifiedAt: '2024-11-19T21:54:46.576127Z'
   name: plibMaven
-  version: 8.4.0
+  version: 8.6.0
   id: '460735967'
   createdAt: '2024-11-19T21:54:46.576127Z'
   type: plibMaven
+  enabled: true
+  entity: Project
 - modifiedAt: '2024-11-19T21:54:46.576127Z'
   name: plibPypi
-  version: 1.9.24
+  version: 1.9.28
   id: '617167463'
   createdAt: '2024-11-19T21:54:46.576127Z'
   type: plibPypi
+  enabled: true
+  entity: Project
 projectDependencies:
   '12655':
     projectUID: 12655
@@ -148,18 +154,18 @@ projectDependencies:
     projectUID: 12654
     projectName: ProphecySparkBasicsPython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
-    version: 0.2.36
+    version: 0.2.39
     isDefault: true
     author: null
-    createdAt: '2024-12-06 18:08:58'
+    createdAt: '2024-12-19 16:55:53'
   '32699':
     projectUID: 32699
     projectName: ProphecySparkDataQualityPython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/gLsx7fee_project_32699.git&subPath=
-    version: 0.0.1
+    version: 0.0.3
     isDefault: false
     author: null
-    createdAt: '2024-11-22 21:19:31'
+    createdAt: '2024-12-19 19:34:35'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}
