@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from silver.config.ConfigStore import *
 from silver.functions import *
 
-def sorted_reformatted_sales(spark: SparkSession, sales_summary_details: DataFrame) -> DataFrame:
+def reformatted_sales_ordered(spark: SparkSession, sales_summary_details: DataFrame) -> DataFrame:
     return sales_summary_details.orderBy(col("CAST_SALES_TOTAL_FORMATTED_AS_DOUBLE_").desc())
