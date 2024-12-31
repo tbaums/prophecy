@@ -16,52 +16,6 @@
     "id" : "1",
     "uri" : "pipelines/basics",
     "sourceSuggestions" : [ {
-      "sourceLabel" : "Customers",
-      "sourceDatasetId" : "datasets/Customers",
-      "canJoinWith" : [ {
-        "processLabel" : "car-mfg-by-country",
-        "processId" : "NlGdzDYE_aL7OYIaLM-0Z$$LpnCmRrK1xKB4m_i3FG9G",
-        "joinColumns" : [ "country" ],
-        "isRecommended" : true,
-        "properties" : {
-          "columnsSelector" : [ "country" ],
-          "conditions" : [ {
-            "alias" : "Customers",
-            "expression" : "('car-mfg-by-country'['country'] = Customers.country_code)",
-            "joinType" : "inner"
-          } ],
-          "expressions" : [ {
-            "alias" : "first_name",
-            "expression" : "Customers.first_name"
-          }, {
-            "alias" : "customer_id",
-            "expression" : "Customers.customer_id"
-          }, {
-            "alias" : "email",
-            "expression" : "Customers.email"
-          }, {
-            "alias" : "account_open_date",
-            "expression" : "Customers.account_open_date"
-          }, {
-            "alias" : "last_name",
-            "expression" : "Customers.last_name"
-          }, {
-            "alias" : "account_flags",
-            "expression" : "Customers.account_flags"
-          }, {
-            "alias" : "phone",
-            "expression" : "Customers.phone"
-          }, {
-            "alias" : "make",
-            "expression" : "'car-mfg-by-country'['make']"
-          }, {
-            "alias" : "country",
-            "expression" : "'car-mfg-by-country'['country']"
-          } ],
-          "headAlias" : "datasets/Customers"
-        }
-      } ]
-    }, {
       "sourceLabel" : "car_sales",
       "sourceDatasetId" : "datasets/car-sales",
       "canJoinWith" : [ {
@@ -552,7 +506,7 @@
         }
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.34&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/Filter",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -837,7 +791,7 @@
         "columnsSelector" : [ "E0QNtsZ8##color", "E0QNtsZ8##model", "E0QNtsZ8##make", "E0QNtsZ8##seller", "E0QNtsZ8##trim", "E0QNtsZ8##transmission", "E0QNtsZ8##interior", "E0QNtsZ8##mmr", "E0QNtsZ8##vin", "E0QNtsZ8##body", "E0QNtsZ8##sellingprice", "E0QNtsZ8##condition", "E0QNtsZ8##year", "E0QNtsZ8##state", "E0QNtsZ8##odometer" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.34&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -1017,7 +971,7 @@
         }
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.34&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/Filter",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -1265,7 +1219,7 @@
         "columnsSelector" : [ ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.34&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -1653,7 +1607,7 @@
         "columnsSelector" : [ "ZOVx60dycGwXNT4CJWbgh$$322h3jCl0sKnWhIDfWi9d##saledate" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.34&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -1938,7 +1892,7 @@
         "columnsSelector" : [ "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##model", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##state", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##interior", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##seller", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##year", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##trim", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##transmission", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##make", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##mmr", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##condition", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##sellingprice", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##odometer", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##color", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##body", "6rcVG0vSM23AViU3RX2H_$$qB4UtXFCMOuKYjtSDr42n##vin" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.34&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
