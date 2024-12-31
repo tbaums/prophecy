@@ -1,0 +1,245 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.6.0",
+        "pyPiVersion" : "1.9.28"
+      },
+      "sparkConfigJinjaEnabled" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/bronze",
+    "sourceSuggestions" : [ {
+      "sourceLabel" : "customers_1",
+      "sourceDatasetId" : "datasets/customers",
+      "canJoinWith" : [ {
+        "processLabel" : "orders",
+        "processId" : "mda8Xmfky6dURLSWKplJf$$O_MvHiJVXVRDKMjZgYoQN",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "customers_1",
+            "expression" : "(orders.customer_id = customers_1.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "first_name",
+            "expression" : "customers_1.first_name"
+          }, {
+            "alias" : "last_name",
+            "expression" : "customers_1.last_name"
+          }, {
+            "alias" : "email",
+            "expression" : "customers_1.email"
+          }, {
+            "alias" : "phone_number",
+            "expression" : "customers_1.phone_number"
+          }, {
+            "alias" : "address",
+            "expression" : "customers_1.address"
+          }, {
+            "alias" : "order_id",
+            "expression" : "orders.order_id"
+          }, {
+            "alias" : "order_status",
+            "expression" : "orders.order_status"
+          }, {
+            "alias" : "order_amount",
+            "expression" : "orders.order_amount"
+          }, {
+            "alias" : "order_date",
+            "expression" : "orders.order_date"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "orders.customer_id"
+          } ],
+          "headAlias" : "datasets/customers"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "orders_1",
+      "sourceDatasetId" : "datasets/orders",
+      "canJoinWith" : [ {
+        "processLabel" : "customers",
+        "processId" : "irn4O4eFWvH4pQR8v5yJH$$5KYRvsFBhOplce78Lmqdz",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "orders_1",
+            "expression" : "(customers.customer_id = orders_1.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "order_id",
+            "expression" : "orders_1.order_id"
+          }, {
+            "alias" : "order_date",
+            "expression" : "orders_1.order_date"
+          }, {
+            "alias" : "order_amount",
+            "expression" : "orders_1.order_amount"
+          }, {
+            "alias" : "order_status",
+            "expression" : "orders_1.order_status"
+          }, {
+            "alias" : "phone_number",
+            "expression" : "customers.phone_number"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "customers.customer_id"
+          }, {
+            "alias" : "last_name",
+            "expression" : "customers.last_name"
+          }, {
+            "alias" : "email",
+            "expression" : "customers.email"
+          }, {
+            "alias" : "first_name",
+            "expression" : "customers.first_name"
+          }, {
+            "alias" : "address",
+            "expression" : "customers.address"
+          } ],
+          "headAlias" : "datasets/orders"
+        }
+      } ]
+    } ],
+    "pipelineSettingsInfo" : {
+      "applicationName" : "bronze",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true,
+      "isNullValuesInUnitTestsEnabled" : true
+    },
+    "language" : "python",
+    "fabricId" : "19010",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "michaelprophecyioteam.customeranalysis.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.data_quality.functions", "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "32699",
+      "projectName" : "ProphecySparkDataQualityPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "bronze",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ ],
+  "processes" : {
+    "irn4O4eFWvH4pQR8v5yJH$$5KYRvsFBhOplce78Lmqdz" : {
+      "id" : "irn4O4eFWvH4pQR8v5yJH$$5KYRvsFBhOplce78Lmqdz",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "customers",
+        "slug" : "customers",
+        "x" : -780,
+        "y" : -320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "20SY1Bt5NEHc5bKcEggEE$$8_iIktAj-2j3iGAB464ev",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/customers"
+      }
+    },
+    "mda8Xmfky6dURLSWKplJf$$O_MvHiJVXVRDKMjZgYoQN" : {
+      "id" : "mda8Xmfky6dURLSWKplJf$$O_MvHiJVXVRDKMjZgYoQN",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "orders",
+        "slug" : "orders",
+        "x" : -780,
+        "y" : -160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Y9pVS5NhACw8FAilsL1PZ$$FIJ1kajJsYVvQKhrziFaw",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/orders"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

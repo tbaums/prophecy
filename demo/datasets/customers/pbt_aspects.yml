@@ -1,0 +1,46 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: customer_id
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for each customer
+      mappings: []
+      tags: []
+  - name: first_name
+    type: string
+    nullable: true
+    metadata:
+      description: The first name of the customer
+      mappings: []
+      tags: []
+  - name: last_name
+    type: string
+    nullable: true
+    metadata:
+      description: The last name of the customer
+      mappings: []
+      tags: []
+  - name: email
+    type: string
+    nullable: true
+    metadata:
+      description: Email address of the customer
+      mappings: []
+      tags: []
+  - name: phone_number
+    type: string
+    nullable: true
+    metadata:
+      description: Contact phone number of the customer
+      mappings: []
+      tags: []
+  - name: address
+    type: string
+    nullable: true
+    metadata:
+      description: The physical address of the customer
+      mappings: []
+      tags: []
