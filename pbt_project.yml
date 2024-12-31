@@ -24,7 +24,8 @@ pipelines:
       - datasets/car-mfg-by-country
       - datasets/car-sales
       outputs:
-      - datasets/car-sales-ca
+      - datasets/car-sales-california
+      - datasets/car-sales-us-excluding-california
     subgraphs: []
     dependencies: {}
   pipelines/car-sales-analysis:
@@ -36,7 +37,10 @@ pipelines:
     language: python
     createdAt: '2024-11-19 17:58:33'
     datasets:
-      inputs: []
+      inputs:
+      - datasets/car-mfg-by-country
+      - datasets/car-sales-california
+      - datasets/car-sales-us-excluding-california
       outputs: []
     subgraphs: []
     dependencies: {}
@@ -54,45 +58,6 @@ datasets:
         description: ''
         author: michael@prophecy.io
         createdAt: '2024-11-19 17:39:09'
-  datasets/car-title-status:
-    name: car-title-status
-    description: ''
-    author: michael@prophecy.io
-    createdAt: '2024-11-19 17:46:19'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 19010
-        datasetType: File
-        description: ''
-        author: michael@prophecy.io
-        createdAt: '2024-11-19 17:46:19'
-  datasets/car-sales-ca:
-    name: car-sales-ca
-    description: ''
-    author: michael@prophecy.io
-    createdAt: '2024-11-19 17:51:50'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 19010
-        datasetType: File
-        description: ''
-        author: michael@prophecy.io
-        createdAt: '2024-11-19 17:51:50'
-  datasets/car-sales-us-no-ca:
-    name: car-sales-us-no-ca
-    description: ''
-    author: michael@prophecy.io
-    createdAt: '2024-11-19 17:58:07'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 19010
-        datasetType: File
-        description: ''
-        author: michael@prophecy.io
-        createdAt: '2024-11-19 17:58:07'
   datasets/car-mfg-by-country:
     name: car-mfg-by-country
     description: ''
@@ -106,6 +71,32 @@ datasets:
         description: ''
         author: michael@prophecy.io
         createdAt: '2024-11-19 19:15:18'
+  datasets/car-sales-california:
+    name: car-sales-california
+    description: ''
+    author: michael@prophecy.io
+    createdAt: '2024-11-19 21:19:08'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 19010
+        datasetType: File
+        description: ''
+        author: michael@prophecy.io
+        createdAt: '2024-11-19 21:19:08'
+  datasets/car-sales-us-excluding-california:
+    name: car-sales-us-excluding-california
+    description: ''
+    author: michael@prophecy.io
+    createdAt: '2024-11-19 21:19:57'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 19010
+        datasetType: File
+        description: ''
+        author: michael@prophecy.io
+        createdAt: '2024-11-19 21:19:57'
 templates: {}
 jobs: {}
 gemContainer:
@@ -133,16 +124,20 @@ sqlPipeline: null
 dependencies:
 - modifiedAt: '2024-11-12T17:41:01.058356Z'
   name: plibMaven
-  version: 8.4.0
+  version: 8.6.0
   id: '1866055911'
   createdAt: '2024-11-12T17:41:01.058356Z'
   type: plibMaven
+  enabled: true
+  entity: Project
 - modifiedAt: '2024-11-12T17:41:01.058356Z'
   name: plibPypi
-  version: 1.9.24
+  version: 1.9.28
   id: '57164200'
   createdAt: '2024-11-12T17:41:01.058356Z'
   type: plibPypi
+  enabled: true
+  entity: Project
 projectDependencies:
   '12655':
     projectUID: 12655
@@ -156,10 +151,10 @@ projectDependencies:
     projectUID: 12654
     projectName: ProphecySparkBasicsPython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
-    version: 0.2.34
+    version: 0.2.39
     isDefault: true
     author: null
-    createdAt: '2024-11-18 19:32:01'
+    createdAt: '2024-12-31 15:03:23'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

@@ -1,23 +1,26 @@
 {
   "metainfo" : {
     "migrationVersions" : {
-      "gemBuilderVersion" : "v1"
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
     },
     "functions" : { },
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "8.4.0",
-        "pyPiVersion" : "1.9.24"
+        "mavenVersion" : "8.6.0",
+        "pyPiVersion" : "1.9.28"
       },
       "sparkConfigJinjaEnabled" : true
     },
     "id" : "1",
     "uri" : "pipelines/car-sales-analysis",
+    "sourceSuggestions" : [ ],
     "pipelineSettingsInfo" : {
       "applicationName" : "car-sales-analysis",
       "hasApplication" : true,
-      "isFunctionsPackageDirDefined" : true
+      "isFunctionsPackageDirDefined" : true,
+      "isNullValuesInUnitTestsEnabled" : true
     },
     "language" : "python",
     "fabricId" : "19010",
@@ -73,8 +76,1141 @@
     "topLevelPackage" : "carsalesanalysis",
     "configurationVersion" : "v2"
   },
-  "connections" : [ ],
-  "processes" : { },
+  "connections" : [ {
+    "id" : "QHKQQ15p",
+    "source" : "pbc6Tp61",
+    "sourcePort" : "kaCEOnBH",
+    "target" : "K4ZStkNt",
+    "targetPort" : "edaLgGuG"
+  }, {
+    "id" : "GLSqsCHP",
+    "source" : "Y62PGAvS",
+    "sourcePort" : "J7tZL9VB",
+    "target" : "v6sUIAka",
+    "targetPort" : "UoTefV0V"
+  }, {
+    "id" : "BNA7VqFL",
+    "source" : "K4ZStkNt",
+    "sourcePort" : "McitiD9P",
+    "target" : "v6sUIAka",
+    "targetPort" : "Yn2WCC3n"
+  }, {
+    "id" : "vbRU1bqw",
+    "source" : "VLFMge69",
+    "sourcePort" : "PySrwl53",
+    "target" : "K4ZStkNt",
+    "targetPort" : "ITFt4VJM"
+  }, {
+    "id" : "G0l17sdq",
+    "source" : "DFMLohvN",
+    "sourcePort" : "XnHlTzJY",
+    "target" : "Y62PGAvS",
+    "targetPort" : "VS3GWaMg"
+  }, {
+    "id" : "LhvsFSH2",
+    "source" : "VLFMge69",
+    "sourcePort" : "PySrwl53",
+    "target" : "Y62PGAvS",
+    "targetPort" : "neD4GZOq"
+  } ],
+  "processes" : {
+    "DFMLohvN" : {
+      "id" : "DFMLohvN",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "car",
+        "slug" : "car",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "XnHlTzJY",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/car-sales-us-excluding-california"
+      }
+    },
+    "v6sUIAka" : {
+      "id" : "v6sUIAka",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "combined_records",
+        "slug" : "combined_records",
+        "x" : 420,
+        "y" : 220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UoTefV0V",
+          "slug" : "car_sales_data_excluding_california",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "`YEAR`",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The year the car was manufactured",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MAKE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MODEL",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TRIM",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific variant or configuration of the car model",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "BODY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of the car's body style",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TRANSMISSION",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of transmission in the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "VIN",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for each car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "STATE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the car is being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CONDITION",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ODOMETER",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The recorded mileage of the car at the time of sale",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "COLOR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "INTERIOR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the car's interior features and materials",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SELLER",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name of the individual or dealership selling the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MMR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The market value of the car based on its condition and specifications.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SELLINGPRICE",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "COUNTRY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The country where the make is located",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "Yn2WCC3n",
+          "slug" : "car_sales_data_with_country",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "`YEAR`",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The year the car was manufactured",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MAKE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MODEL",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TRIM",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific variant or configuration of the car model",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "BODY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of the car's body style",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TRANSMISSION",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of transmission in the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "VIN",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for each car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "STATE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the car is being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CONDITION",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ODOMETER",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The recorded mileage of the car at the time of sale",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "COLOR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "INTERIOR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the car's interior features and materials",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SELLER",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name of the individual or dealership selling the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MMR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The market value of the car based on its condition and specifications.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SELLINGPRICE",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "COUNTRY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The country where the make is located",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "tqpkHnGe",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "SELECT *\nFROM car_sales_data_excluding_california\nUNION\nSELECT *\nFROM car_sales_data_with_country"
+        } ],
+        "inputPortNames" : [ "car_sales_data_excluding_california", "car_sales_data_with_country" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/SQLStatement",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "Y62PGAvS" : {
+      "id" : "Y62PGAvS",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "car_sales_data_excluding_california",
+        "slug" : "car_sales_data_excluding_california",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "VS3GWaMg",
+          "slug" : "car",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "YEAR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The year the car was manufactured",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MAKE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MODEL",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TRIM",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific variant or configuration of the car model",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "BODY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of the car's body style",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TRANSMISSION",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of transmission in the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "VIN",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for each car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "STATE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the car is being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CONDITION",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ODOMETER",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The recorded mileage of the car at the time of sale",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "COLOR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "INTERIOR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the car's interior features and materials",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SELLER",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name of the individual or dealership selling the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MMR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The market value of the car based on its condition and specifications.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SELLINGPRICE",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "neD4GZOq",
+          "slug" : "car_1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "make",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The manufacturer or brand of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The country where the make is located",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "J7tZL9VB",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "car_1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.MAKE = car_1.make"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "target" : "`YEAR`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.`YEAR`"
+          },
+          "description" : ""
+        }, {
+          "target" : "MAKE",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.MAKE"
+          },
+          "description" : ""
+        }, {
+          "target" : "MODEL",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.MODEL"
+          },
+          "description" : ""
+        }, {
+          "target" : "TRIM",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.TRIM"
+          },
+          "description" : ""
+        }, {
+          "target" : "BODY",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.BODY"
+          },
+          "description" : ""
+        }, {
+          "target" : "TRANSMISSION",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.TRANSMISSION"
+          },
+          "description" : ""
+        }, {
+          "target" : "VIN",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.VIN"
+          },
+          "description" : ""
+        }, {
+          "target" : "STATE",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.STATE"
+          },
+          "description" : ""
+        }, {
+          "target" : "CONDITION",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.CONDITION"
+          },
+          "description" : ""
+        }, {
+          "target" : "ODOMETER",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.ODOMETER"
+          },
+          "description" : ""
+        }, {
+          "target" : "COLOR",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.COLOR"
+          },
+          "description" : ""
+        }, {
+          "target" : "INTERIOR",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.INTERIOR"
+          },
+          "description" : ""
+        }, {
+          "target" : "SELLER",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.SELLER"
+          },
+          "description" : ""
+        }, {
+          "target" : "MMR",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.MMR"
+          },
+          "description" : ""
+        }, {
+          "target" : "SELLINGPRICE",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car.SELLINGPRICE"
+          },
+          "description" : ""
+        }, {
+          "target" : "COUNTRY",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_1.country"
+          },
+          "description" : ""
+        } ],
+        "hints" : [ {
+          "id" : "car",
+          "alias" : "car",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "car_1",
+          "alias" : "car_1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "car"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "VLFMge69" : {
+      "id" : "VLFMge69",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "car_1",
+        "slug" : "car_1",
+        "x" : 20,
+        "y" : 420,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "PySrwl53",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/car-mfg-by-country"
+      }
+    },
+    "pbc6Tp61" : {
+      "id" : "pbc6Tp61",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "car_2",
+        "slug" : "car_2",
+        "x" : 20,
+        "y" : 220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "kaCEOnBH",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/car-sales-california"
+      }
+    },
+    "K4ZStkNt" : {
+      "id" : "K4ZStkNt",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "car_sales_data_with_country",
+        "slug" : "car_sales_data_with_country",
+        "x" : 220,
+        "y" : 320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "edaLgGuG",
+          "slug" : "car_2",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "YEAR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The year the car was manufactured",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MAKE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MODEL",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific model of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TRIM",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific variant or configuration of the car model",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "BODY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of the car's body style",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TRANSMISSION",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of transmission in the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "VIN",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique Vehicle Identification Number for each car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "STATE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The state where the car is being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CONDITION",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The overall condition of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ODOMETER",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The recorded mileage of the car at the time of sale",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "COLOR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Color of the car being sold",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "INTERIOR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the car's interior features and materials",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SELLER",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name of the individual or dealership selling the car",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MMR",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The market value of the car based on its condition and specifications.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SELLINGPRICE",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "ITFt4VJM",
+          "slug" : "car_1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "make",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The manufacturer or brand of the vehicle",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The country where the make is located",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "McitiD9P",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "car_1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.MAKE = car_1.make"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "target" : "`YEAR`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.`YEAR`"
+          },
+          "description" : ""
+        }, {
+          "target" : "MAKE",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.MAKE"
+          },
+          "description" : ""
+        }, {
+          "target" : "MODEL",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.MODEL"
+          },
+          "description" : ""
+        }, {
+          "target" : "TRIM",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.TRIM"
+          },
+          "description" : ""
+        }, {
+          "target" : "BODY",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.BODY"
+          },
+          "description" : ""
+        }, {
+          "target" : "TRANSMISSION",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.TRANSMISSION"
+          },
+          "description" : ""
+        }, {
+          "target" : "VIN",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.VIN"
+          },
+          "description" : ""
+        }, {
+          "target" : "STATE",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.STATE"
+          },
+          "description" : ""
+        }, {
+          "target" : "CONDITION",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.CONDITION"
+          },
+          "description" : ""
+        }, {
+          "target" : "ODOMETER",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.ODOMETER"
+          },
+          "description" : ""
+        }, {
+          "target" : "COLOR",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.COLOR"
+          },
+          "description" : ""
+        }, {
+          "target" : "INTERIOR",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.INTERIOR"
+          },
+          "description" : ""
+        }, {
+          "target" : "SELLER",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.SELLER"
+          },
+          "description" : ""
+        }, {
+          "target" : "MMR",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.MMR"
+          },
+          "description" : ""
+        }, {
+          "target" : "SELLINGPRICE",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_2.SELLINGPRICE"
+          },
+          "description" : ""
+        }, {
+          "target" : "COUNTRY",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "car_1.country"
+          },
+          "description" : ""
+        } ],
+        "hints" : [ {
+          "id" : "car_2",
+          "alias" : "car_2",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "car_1",
+          "alias" : "car_1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "car_2"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.39&projectSubscriptionProjectId=12654&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
   "ports" : {
     "inputs" : [ ],
     "outputs" : [ ],

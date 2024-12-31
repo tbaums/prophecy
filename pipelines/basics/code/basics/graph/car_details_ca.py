@@ -8,7 +8,7 @@ from basics.functions import *
 
 def car_details_ca(spark: SparkSession, filter_by_state_ca: DataFrame) -> DataFrame:
     return filter_by_state_ca.select(
-        col("year").alias("`YEAR`"), 
+        col("year").alias("YEAR"), 
         upper(col("make")).alias("MAKE"), 
         col("model").alias("MODEL"), 
         col("trim").alias("TRIM"), 
@@ -22,6 +22,5 @@ def car_details_ca(spark: SparkSession, filter_by_state_ca: DataFrame) -> DataFr
         col("interior").alias("INTERIOR"), 
         col("seller").alias("SELLER"), 
         col("mmr").alias("MMR"), 
-        col("sellingprice").alias("SELLINGPRICE"), 
-        col("saledate").alias("SALEDATE")
+        col("sellingprice").cast(DecimalType(10, 0)).alias("SELLINGPRICE")
     )

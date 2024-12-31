@@ -4,9 +4,19 @@ from pyspark.sql.types import *
 from carsalesanalysis.config.ConfigStore import *
 from carsalesanalysis.functions import *
 from prophecy.utils import *
+from carsalesanalysis.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    pass
+    df_car = car(spark)
+    df_car_1 = car_1(spark)
+    df_car_sales_data_excluding_california = car_sales_data_excluding_california(spark, df_car, df_car_1)
+    df_car_2 = car_2(spark)
+    df_car_sales_data_with_country = car_sales_data_with_country(spark, df_car_2, df_car_1)
+    df_combined_records = combined_records(
+        spark, 
+        df_car_sales_data_excluding_california, 
+        df_car_sales_data_with_country
+    )
 
 def main():
     spark = SparkSession.builder\

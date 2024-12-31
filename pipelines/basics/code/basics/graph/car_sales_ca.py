@@ -7,4 +7,10 @@ from basics.config.ConfigStore import *
 from basics.functions import *
 
 def car_sales_ca(spark: SparkSession, in0: DataFrame):
-    in0.write.format("parquet").mode("overwrite").save("/Volumes/michael/onboard/sales-data/car-sales-no-ca")
+    in0.write\
+        .option("header", True)\
+        .option("sep", ",")\
+        .mode("overwrite")\
+        .option("separator", ",")\
+        .option("header", True)\
+        .csv("/Volumes/michael/onboard/sales-data/car-sales-no-ca/")
