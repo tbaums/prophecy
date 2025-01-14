@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from silver.config.ConfigStore import *
 from silver.functions import *
 
-def limited_sort_results(spark: SparkSession, reformatted_sales_ordered: DataFrame) -> DataFrame:
-    return reformatted_sales_ordered.limit(25)
+def limited_sort_results(spark: SparkSession, customer_order_summary_sorted: DataFrame) -> DataFrame:
+    return customer_order_summary_sorted.limit(25)

@@ -28,10 +28,10 @@ pipelines:
     dependencies: {}
   pipelines/silver:
     name: demo_silver
-    description: Analyzes sales data by merging customer and order information. It
-      reformats names, extracts company names from emails, and summarizes sales by
-      customer. The final output presents the top 25 customers based on total sales,
-      providing insights into customer order counts and sales totals.
+    description: Generates a summary of customer orders, including full names, order
+      counts, and total amounts. It reads customer and order data from CSV files,
+      joins them, and processes the information to provide a ranked list of customers
+      based on their total order amounts, limiting the results to the top 25 customers.
     author: michael@prophecy.io
     mode: batch
     artefactID: ''

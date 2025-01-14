@@ -6,7 +6,7 @@ from prophecy.libs import typed_lit
 from silver.config.ConfigStore import *
 from silver.functions import *
 
-def reformatted_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def full_name_projection(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         concat(col("first_name"), lit(" "), col("last_name")).alias("full_name"), 
         col("order_id"), 

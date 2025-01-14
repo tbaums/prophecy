@@ -6,10 +6,9 @@ from prophecy.libs import typed_lit
 from silver.config.ConfigStore import *
 from silver.functions import *
 
-def sales_summary_details(spark: SparkSession, sales_summary: DataFrame) -> DataFrame:
-    return sales_summary.select(
+def customer_order_summary(spark: SparkSession, order_summary_by_customer: DataFrame) -> DataFrame:
+    return order_summary_by_customer.select(
         col("full_name"), 
         col("ORDER_COUNT"), 
-        col("SALES_TOTAL_FORMATTED"), 
-        col("SALES_TOTAL_FORMATTED").cast(DoubleType()).alias("CAST_SALES_TOTAL_FORMATTED_AS_DOUBLE_")
+        round(col("TOTAL_ORDER_AMOUNT"), 2).alias("TOTAL_ORDER_AMOUNT")
     )
