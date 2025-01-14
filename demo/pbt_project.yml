@@ -38,9 +38,7 @@ pipelines:
     language: python
     createdAt: '2024-11-19 21:56:31'
     datasets:
-      inputs:
-      - datasets/customers
-      - datasets/orders
+      inputs: []
       outputs: []
     subgraphs: []
     dependencies: {}
