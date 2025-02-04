@@ -125,7 +125,7 @@ sqlPipeline: null
 dependencies:
 - modifiedAt: '2024-11-19T21:54:46.576127Z'
   name: plibMaven
-  version: 8.6.0
+  version: 8.7.1
   id: '460735967'
   createdAt: '2024-11-19T21:54:46.576127Z'
   type: plibMaven
@@ -133,7 +133,7 @@ dependencies:
   entity: Project
 - modifiedAt: '2024-11-19T21:54:46.576127Z'
   name: plibPypi
-  version: 1.9.28
+  version: 1.9.29
   id: '617167463'
   createdAt: '2024-11-19T21:54:46.576127Z'
   type: plibPypi
